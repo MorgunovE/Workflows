@@ -1,0 +1,11 @@
+name: hello_workflow
+on: [push]
+jobs:
+  print-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Hello world using echo
+        run: echo "$(<hello.txt)"
+      - name: Hello world using cat
+        run: cat hello.txt
